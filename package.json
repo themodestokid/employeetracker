@@ -3,17 +3,22 @@
   "version": "1.0.0",
   "description": "## Your Task",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/server.js"
+    "start": "node index.js",
+    "dev": "npm run build && npm run start"
   },
   "author": "Jeremy Osner",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.7",
     "inquirer": "^12.3.2",
-    "pg": "^8.13.1",
     "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.11.10",
+    "pg": "^8.13.1"
   }
 }
