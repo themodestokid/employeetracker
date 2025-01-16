@@ -282,7 +282,7 @@ async function updateRole(): Promise<void> {
         }
     ]);
     const roleId = roles.rows.find(entry => entry.title === answers.role).id;
-    const employeeId = employees.rows.find(entry => entry.name = answers.employee).id;
+    const employeeId = employees.rows.find(entry => entry.name === answers.employee).id;
     const managerId = managers.find(entry => entry.name === answers.manager).id;
     // console.log('employee id', employeeId);
     // console.log('manager id ' , managerId);
@@ -357,7 +357,7 @@ async function deleteEmployee(): Promise<void> {
             choices: employees.rows.map(entry => entry.name)
         }
     ]);
-    const employeeId = employees.rows.find(entry => entry.name = answer.employee).id;
+    const employeeId = employees.rows.find(entry => entry.name === answer.employee).id;
     await pool.query(`DELETE from employees WHERE id = ${employeeId}`);
     console.log('Deleted', answer.employee);
 }
